@@ -18,7 +18,7 @@ import "../styles/main.scss";
         <p class="subtext">We can help to solve your challenges and realise your vision.</p>
       </div>
       <section class="contact-form__container">
-        <form class="contact-form">
+        <form class="contact-form" novalidate>
           <fieldset class="contact-form__fieldset">
             <legend class="contact-form__legend visually-hidden">Personal information</legend>
             <h2 class="contact-form__h2">Contact Us</h2>
@@ -83,6 +83,14 @@ import "../styles/main.scss";
           <button type="submit" class="contact-form__button">Submit</button>
         </form>
       </section>
+
+      <!-- submissions -->
+      <section class="container" aria-live="polite">
+        <h2>Submissions</h2>
+      </section>
     </main>
+    
+    <!-- scripts -->
+    <script src="../scripts/form.ts"></script>
   </body>
 </html>
