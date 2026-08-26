@@ -14,7 +14,7 @@ import "../styles/main.scss";
   <body>
     <main>
       <div class="container">
-        <h1 class=".h1--contact">Contact</h1>
+        <h1 class="h1--contact">Contact</h1>
         <p class="subtext">We can help to solve your challenges and realise your vision.</p>
       </div>
       <section class="contact-form__container">
@@ -32,7 +32,7 @@ import "../styles/main.scss";
                 name="name"
                 required
                 aria-describedby="name-error"
-				class="contact-form__input"
+                class="contact-form__input"
               />
               <span id="name-error" hidden class="contact-form__error">Please enter a valid name.</span>
             </div>
@@ -45,26 +45,54 @@ import "../styles/main.scss";
                 name="email"
                 required
                 aria-describedby="email-error"
-				class="contact-form__input"
+                class="contact-form__input"
               />
-              <span id="email-error" hidden class="contact-form__error"
-                >Please enter a valid email address.</span
-              >
+              <span id="email-error" hidden class="contact-form__error">Please enter a valid email address.</span>
             </div>
             <!-- date of birth -->
             <div class="contact-form__field">
-              <label for="birthdate" class="contact-form__label">Date of birth</label>
-              <input
-                type="date"
-                id="birthdate"
-                name="birthdate"
-                value=""
-                aria-describedby="birthdate-error"
-				class="contact-form__input"
-              />
-              <span id="birthdate-error" hidden class="contact-form__error"
-                >Please enter a valid date of birth.</span
-              >
+              <fieldset class="contact-form__date-fieldset">
+                <legend class="contact-form__label">Date of birth</legend>
+                <div class="contact-form__date-group" aria-describedby="birthdate-error">
+                  <div class="contact-form__date-field">
+                    <label for="birthdate-day" class="contact-form__date-label">Day</label>
+                    <input
+                      type="text"
+                      id="birthdate-day"
+                      name="birthdate-day"
+                      inputmode="numeric"
+                      maxlength="2"
+                      placeholder="DD"
+                      class="contact-form__input contact-form__input--date"
+                    />
+                  </div>
+                  <div class="contact-form__date-field">
+                    <label for="birthdate-month" class="contact-form__date-label">Month</label>
+                    <input
+                      type="text"
+                      id="birthdate-month"
+                      name="birthdate-month"
+                      inputmode="numeric"
+                      maxlength="2"
+                      placeholder="MM"
+                      class="contact-form__input contact-form__input--date"
+                    />
+                  </div>
+                  <div class="contact-form__date-field">
+                    <label for="birthdate-year" class="contact-form__date-label">Year</label>
+                    <input
+                      type="text"
+                      id="birthdate-year"
+                      name="birthdate-year"
+                      inputmode="numeric"
+                      maxlength="4"
+                      placeholder="YYYY"
+                      class="contact-form__input contact-form__input--date"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <span id="birthdate-error" hidden class="contact-form__error">Please enter a valid date of birth.</span>
             </div>
             <!-- phone -->
             <div class="contact-form__field">
@@ -74,11 +102,9 @@ import "../styles/main.scss";
                 id="phone"
                 name="phone"
                 aria-describedby="phone-error"
-				class="contact-form__input"
+                class="contact-form__input"
               />
-              <span id="phone-error" hidden class="contact-form__error"
-                >Please enter a valid phone number.</span
-              >
+              <span id="phone-error" hidden class="contact-form__error">Please enter a valid phone number.</span>
             </div>
           </fieldset>
           <button type="submit" class="btn btn--primary">Submit</button>
@@ -90,7 +116,7 @@ import "../styles/main.scss";
         <h2>Submissions</h2>
       </section>
     </main>
-    
+
     <!-- scripts -->
     <script src="../scripts/form.ts"></script>
   </body>

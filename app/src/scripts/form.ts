@@ -17,8 +17,19 @@ type Submission = {
 const form = document.querySelector<HTMLFormElement>(".contact-form");
 const nameInput = document.querySelector<HTMLInputElement>("#name");
 const emailInput = document.querySelector<HTMLInputElement>("#email");
-const birthdateInput = document.querySelector<HTMLInputElement>("#birthdate");
+const birthdateDayInput = document.querySelector<HTMLInputElement>("#birthdate-day");
+const birthdateMonthInput = document.querySelector<HTMLInputElement>("#birthdate-month");
+const birthdateYearInput = document.querySelector<HTMLInputElement>("#birthdate-year");
 const phoneInput = document.querySelector<HTMLInputElement>("#phone");
+
+// Combine day/month/year inputs into yyyy-mm-dd for validation
+function getBirthdate(): string {
+  const day = birthdateDayInput?.value.trim() ?? "";
+  const month = birthdateMonthInput?.value.trim() ?? "";
+  const year = birthdateYearInput?.value.trim() ?? "";
+  if (!day && !month && !year) return "";
+  return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+}
 
 // Error/field helpers
 function showError(input: HTMLInputElement, message: string): void {
@@ -38,6 +49,20 @@ function clearError(input: HTMLInputElement): void {
   error.setAttribute("hidden", "");
   input.removeAttribute("aria-invalid");
   field.classList.remove("contact-form__field--error");
+}
+
+function showDateError(message: string | null): void {
+  const errorEl = document.getElementById("birthdate-error");
+  const field = document.querySelector<HTMLElement>(".contact-form__field:has(#birthdate-day)");
+  if (!errorEl || !field) return;
+  if (message) {
+    errorEl.textContent = message;
+    errorEl.removeAttribute("hidden");
+    field.classList.add("contact-form__field--error");
+  } else {
+    errorEl.setAttribute("hidden", "");
+    field.classList.remove("contact-form__field--error");
+  }
 }
 
 // Sanitise user input to prevent XSS
@@ -111,10 +136,11 @@ emailInput?.addEventListener("input", () => {
   error ? showError(emailInput, error) : clearError(emailInput);
 });
 
-birthdateInput?.addEventListener("input", () => {
-  if (!hasSubmitted) return;
-  const error = validateDate(birthdateInput.value);
-  error ? showError(birthdateInput, error) : clearError(birthdateInput);
+[birthdateDayInput, birthdateMonthInput, birthdateYearInput].forEach((input) => {
+  input?.addEventListener("input", () => {
+    if (!hasSubmitted) return;
+    showDateError(validateDate(getBirthdate()));
+  });
 });
 
 phoneInput?.addEventListener("input", () => {
@@ -128,20 +154,20 @@ form?.addEventListener("submit", (e: Event) => {
   e.preventDefault();
   hasSubmitted = true;
 
-  if (!nameInput || !emailInput || !birthdateInput || !phoneInput) return;
+  if (!nameInput || !emailInput || !phoneInput) return;
 
   const nameError = validateName(nameInput.value);
   const emailError = validateEmail(emailInput.value);
-  const dateError = validateDate(birthdateInput.value);
+  const dateError = validateDate(getBirthdate());
   const phoneError = validatePhone(phoneInput.value);
 
   nameError ? showError(nameInput, nameError) : clearError(nameInput);
   emailError ? showError(emailInput, emailError) : clearError(emailInput);
-  dateError ? showError(birthdateInput, dateError) : clearError(birthdateInput);
+  showDateError(dateError);
   phoneError ? showError(phoneInput, phoneError) : clearError(phoneInput);
 
   // Focus first errored field
-  const firstError = [nameInput, emailInput, birthdateInput, phoneInput].find(
+  const firstError = [nameInput, emailInput, phoneInput].find(
     (input) => input.getAttribute("aria-invalid") === "true",
   );
   if (firstError) {
@@ -149,11 +175,16 @@ form?.addEventListener("submit", (e: Event) => {
     return;
   }
 
+  if (dateError) {
+    birthdateDayInput?.focus();
+    return;
+  }
+
   // Add submission
   submissions.push({
     name: nameInput.value,
     email: emailInput.value,
-    birthdate: birthdateInput.value,
+    birthdate: getBirthdate(),
     phone: phoneInput.value,
   });
 
