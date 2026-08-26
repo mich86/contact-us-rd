@@ -3,15 +3,82 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Reason Digital - Contact Form</title>
-	</head>
-	<body>
-		
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Reason Digital - Contact Form</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Contact</h1>
+        <p>We can help to solve your challenges and realise your vision.</p>
+      </div>
+      <section>
+        <form>
+          <fieldset>
+            <legend>Personal information</legend>
+            <h2>Contact Us</h2>
+            <p>Fields marked with an asterisk (*) are required.</p>
+            <!-- name -->
+            <div>
+              <label for="name">Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-describedby="name-error"
+              />
+              <span id="name-error" hidden>Please enter a valid name.</span>
+            </div>
+            <!-- email -->
+            <div>
+              <label for="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-describedby="email-error"
+              />
+              <span id="email-error" hidden
+                >Please enter a valid email address.</span
+              >
+            </div>
+            <!-- date of birth -->
+            <div>
+              <label for="birthdate">Date of birth</label>
+              <input
+                type="date"
+                id="birthdate"
+                name="birthdate"
+                aria-describedby="birthdate-error"
+              />
+              <span id="birthdate-error" hidden
+                >Please enter a valid date of birth.</span
+              >
+            </div>
+            <!-- phone -->
+            <div>
+              <label for="phone">Phone number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                aria-describedby="phone-error"
+              />
+              <span id="phone-error" hidden
+                >Please enter a valid phone number.</span
+              >
+            </div>
+          </fieldset>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
