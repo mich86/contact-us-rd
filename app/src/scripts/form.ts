@@ -82,7 +82,7 @@ function renderSubmissions(): void {
         ${submission.birthdate ? `<p><strong>Date of birth:</strong> ${formatDate(submission.birthdate)}</p>` : ""}
         ${submission.phone ? `<p><strong>Phone:</strong> ${sanitise(submission.phone)}</p>` : ""}
       </div>
-      <button type="button" class="submission__remove" aria-label="Remove entry for ${sanitise(submission.name)}">Remove</button>
+      <button type="button" class="btn btn--outline" aria-label="Remove entry for ${sanitise(submission.name)}">Remove</button>
     `;
 
     entry
