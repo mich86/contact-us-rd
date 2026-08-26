@@ -10,10 +10,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest"
+    "test": "vitest",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
-    "astro": "^7.2.7"
+    "@astrojs/cloudflare": "^14.2.5",
+    "astro": "^7.2.7",
+    "wrangler": "^4.126.0"
   },
   "allowScripts": {
     "esbuild": true
