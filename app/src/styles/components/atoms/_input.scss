@@ -25,4 +25,12 @@
     outline: 3px solid $color-brand-pink;
     outline-offset: 2px;
   }
+
+  &[type="date"] {
+    min-width: 0;
+
+    @media (min-width: $bp-md) {
+      max-width: 45rem;
+    }
+  }
 }
