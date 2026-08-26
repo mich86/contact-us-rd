@@ -13,70 +13,74 @@ import "../styles/main.scss";
   </head>
   <body>
     <main>
-      <div>
-        <h1>Contact</h1>
-        <p>We can help to solve your challenges and realise your vision.</p>
+      <div class="container">
+        <h1 class=".h1--contact">Contact</h1>
+        <p class="subtext">We can help to solve your challenges and realise your vision.</p>
       </div>
-      <section>
-        <form>
-          <fieldset>
-            <legend>Personal information</legend>
-            <h2>Contact Us</h2>
-            <p>Fields marked with an asterisk (*) are required.</p>
+      <section class="contact-form__container">
+        <form class="contact-form">
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-form__legend visually-hidden">Personal information</legend>
+            <h2 class="contact-form__h2">Contact Us</h2>
+            <p class="contact-form__helper">Fields marked with an asterisk (*) are required.</p>
             <!-- name -->
-            <div>
-              <label for="name">Name *</label>
+            <div class="contact-form__field">
+              <label for="name" class="contact-form__label">Name *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
                 aria-describedby="name-error"
+				class="contact-form__input"
               />
-              <span id="name-error" hidden>Please enter a valid name.</span>
+              <span id="name-error" hidden class="contact-form__error">Please enter a valid name.</span>
             </div>
             <!-- email -->
-            <div>
-              <label for="email">Email *</label>
+            <div class="contact-form__field">
+              <label for="email" class="contact-form__label">Email *</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
                 aria-describedby="email-error"
+				class="contact-form__input"
               />
-              <span id="email-error" hidden
+              <span id="email-error" hidden class="contact-form__error"
                 >Please enter a valid email address.</span
               >
             </div>
             <!-- date of birth -->
-            <div>
-              <label for="birthdate">Date of birth</label>
+            <div class="contact-form__field">
+              <label for="birthdate" class="contact-form__label">Date of birth</label>
               <input
                 type="date"
                 id="birthdate"
                 name="birthdate"
                 aria-describedby="birthdate-error"
+				class="contact-form__input"
               />
-              <span id="birthdate-error" hidden
+              <span id="birthdate-error" hidden class="contact-form__error"
                 >Please enter a valid date of birth.</span
               >
             </div>
             <!-- phone -->
-            <div>
-              <label for="phone">Phone number</label>
+            <div class="contact-form__field">
+              <label for="phone" class="contact-form__label">Phone number</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 aria-describedby="phone-error"
+				class="contact-form__input"
               />
-              <span id="phone-error" hidden
+              <span id="phone-error" hidden class="contact-form__error"
                 >Please enter a valid phone number.</span
               >
             </div>
           </fieldset>
-          <button type="submit">Submit</button>
+          <button type="submit" class="contact-form__button">Submit</button>
         </form>
       </section>
     </main>

@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: $spacing-xl;
+
+  @media (min-width: $bp-md) {
+    padding: $spacing-2xl;
+  }
+
+  @media (min-width: $bp-xl) {
+    padding: $spacing-3xl;
+  }
+}

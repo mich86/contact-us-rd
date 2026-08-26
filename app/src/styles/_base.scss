@@ -32,6 +32,19 @@
   padding: 0;
 }
 
+// accessibility
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 // mains
 body {
   font-family: $font-family-base;
@@ -60,9 +73,17 @@ h1 {
   }
 }
 
+.h1--contact {
+  max-width: 20em;
+}
+
 h2 {
   font-size: $font-size-h2;
   font-weight: $font-weight-bold;
   line-height: 1.2;
   color: $color-brand-blue;
+}
+
+.subtext {
+  font-size: $font-size-md;
 }
