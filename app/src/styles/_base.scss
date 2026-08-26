@@ -1,0 +1,68 @@
+@use "variables" as *;
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// mains
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-body;
+  color: $color-black;
+  background-color: $color-white;
+  line-height: 1.6;
+}
+
+main {
+  margin: 0 auto;
+}
+
+// typography
+h1 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  line-height: 1.1;
+  margin-bottom: $spacing-md;
+  color: $color-brand-blue;
+
+  @media (min-width: $bp-md) {
+    font-size: $font-size-h1;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  color: $color-brand-blue;
+}
