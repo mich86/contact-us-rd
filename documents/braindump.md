@@ -23,3 +23,9 @@
 - errors - show on submit only? or when the field loses focus?
 - consent checkboxes required?
 - reCATCHA required?
+
+## Styling
+
+- no branding file provided, using the live site
+- fonts - google fonts download, TTF only prefer woff2
+- fonts - kept bold, regular and semibold only
