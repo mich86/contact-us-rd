@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest"
   },
   "dependencies": {
     "astro": "^7.2.7"
@@ -21,6 +22,7 @@
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "sass": "^1.103.1",
-    "sass-embedded": "^1.103.1"
+    "sass-embedded": "^1.103.1",
+    "vitest": "^4.1.11"
   }
 }
