@@ -10,6 +10,8 @@
   color: $color-black;
   font-family: $font-family-base;
   font-size: $font-size-body;
+  -webkit-appearance: none;
+  appearance: none;
 
   @media (min-width: $bp-md) {
     max-width: 45rem;

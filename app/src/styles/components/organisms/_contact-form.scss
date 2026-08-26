@@ -2,7 +2,7 @@
 
 .contact-form__container {
   background-color: $color-grey;
-  padding: $spacing-xl;
+  padding: $spacing-md;
 
   @media (min-width: $bp-md) {
     padding: $spacing-2xl;
@@ -15,7 +15,7 @@
 
 .contact-form {
   background-color: $color-brand-blue;
-  padding: $spacing-lg;
+  padding: $spacing-md;
 
   @media (min-width: $bp-md) {
     padding: $spacing-2xl;
