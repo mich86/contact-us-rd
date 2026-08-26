@@ -1,4 +1,8 @@
 @use "variables" as *;
 @use "base";
-@use "layout";
-@use "form";
+@use "layout/layout";
+@use "components/atoms/button";
+@use "components/atoms/input";
+@use "components/atoms/typography";
+@use "components/molecules/form-field";
+@use "components/organisms/contact-form";

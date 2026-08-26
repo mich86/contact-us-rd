@@ -1,0 +1,20 @@
+@use "../../variables" as *;
+
+.contact-form__button {
+  cursor: pointer;
+  font-family: $font-family-base;
+  text-transform: uppercase;
+  font-weight: $font-weight-semibold;
+  background-color: $color-brand-pink;
+  color: $color-brand-blue;
+  padding: $spacing-sm $spacing-lg;
+  border: 3px solid $color-brand-pink;
+  border-radius: 3rem;
+  margin-top: $spacing-lg;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+    border: 3px solid $color-black;
+  }
+}

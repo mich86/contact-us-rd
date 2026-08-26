@@ -1,0 +1,22 @@
+@use "../../variables" as *;
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.contact-form__label {
+  color: $color-white;
+  font-weight: $font-weight-bold;
+}
+
+.contact-form__error {
+  color: $color-brand-pink;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+}
+
+.contact-form__helper {
+  color: $color-white;
+}

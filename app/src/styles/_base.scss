@@ -58,32 +58,3 @@ body {
 main {
   margin: 0 auto;
 }
-
-// typography
-h1 {
-  font-size: $font-size-h2;
-  font-weight: $font-weight-bold;
-  line-height: 1.1;
-  margin-bottom: $spacing-md;
-  color: $color-brand-blue;
-
-  @media (min-width: $bp-md) {
-    font-size: $font-size-h1;
-    margin-bottom: $spacing-lg;
-  }
-}
-
-.h1--contact {
-  max-width: 20em;
-}
-
-h2 {
-  font-size: $font-size-h2;
-  font-weight: $font-weight-bold;
-  line-height: 1.2;
-  color: $color-brand-blue;
-}
-
-.subtext {
-  font-size: $font-size-md;
-}
