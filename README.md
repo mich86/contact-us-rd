@@ -89,7 +89,7 @@ In a production environment, a branching strategy would be used - feature branch
 
 - **Safari** — the date of birth field initially used `type="date"` which displayed today's date as a default value and overflowed its container on iOS Safari. This was resolved by replacing the native date input with three separate text inputs for day, month and year, following the GOV.UK design system pattern. This also improves accessibility and cross-browser consistency.
 
-### Accessibility
+## Accessibility
 
 - WCAG 2.2 AA compliance considered throughout
 - `aria-live="polite"` on the submissions section so screen readers announce new entries
@@ -100,7 +100,7 @@ In a production environment, a branching strategy would be used - feature branch
 - Legend is visually hidden but remains in the DOM for screen readers
 - Lighthouse scores: Performance 100, Accessibility 100, Best Practices 100, SEO 82
 - SEO score reflects the absence of a meta description and sitemap
-- Axe DevTools scan returned no accessibility violations
+- axe DevTools scan returned no accessibility violations
 
 ## Future Enhancements
 
