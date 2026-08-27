@@ -70,6 +70,7 @@ In a production environment, a branching strategy would be used - feature branch
 - Poppins font downloaded from Google Fonts as TTF. In a production environment woff2 would be preferred for better compression and performance
 - Sass used with BEM naming convention
 - Atomic design principles applied to the SCSS architecture (atoms, molecules, organisms) to demonstrate scalable and maintainable CSS organisation. In a component-based framework such as React this structure would extend to the component files themselves
+- Mobile-first approach using `min-width` media queries, scaling up from 375px
 
 ### Submissions
 
