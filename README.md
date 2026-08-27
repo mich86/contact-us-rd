@@ -86,7 +86,7 @@ In a production environment, a branching strategy would be used - feature branch
 
 ## Known Browser Differences
 
-- **Safari** — the date of birth field displays today's date as a default value. This is a known Safari behaviour for `type="date"` inputs that cannot be overridden without replacing the native date input with a custom date picker component, which would be the recommended approach in a production implementation.
+- **Safari** — the date of birth field initially used `type="date"` which displayed today's date as a default value and overflowed its container on iOS Safari. This was resolved by replacing the native date input with three separate text inputs for day, month and year, following the GOV.UK design system pattern. This also improves accessibility and cross-browser consistency.
 
 ### Accessibility
 
