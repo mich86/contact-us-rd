@@ -17,9 +17,12 @@ type Submission = {
 const form = document.querySelector<HTMLFormElement>(".contact-form");
 const nameInput = document.querySelector<HTMLInputElement>("#name");
 const emailInput = document.querySelector<HTMLInputElement>("#email");
-const birthdateDayInput = document.querySelector<HTMLInputElement>("#birthdate-day");
-const birthdateMonthInput = document.querySelector<HTMLInputElement>("#birthdate-month");
-const birthdateYearInput = document.querySelector<HTMLInputElement>("#birthdate-year");
+const birthdateDayInput =
+  document.querySelector<HTMLInputElement>("#birthdate-day");
+const birthdateMonthInput =
+  document.querySelector<HTMLInputElement>("#birthdate-month");
+const birthdateYearInput =
+  document.querySelector<HTMLInputElement>("#birthdate-year");
 const phoneInput = document.querySelector<HTMLInputElement>("#phone");
 
 // Combine day/month/year inputs into yyyy-mm-dd for validation
@@ -53,7 +56,9 @@ function clearError(input: HTMLInputElement): void {
 
 function showDateError(message: string | null): void {
   const errorEl = document.getElementById("birthdate-error");
-  const field = document.querySelector<HTMLElement>(".contact-form__field:has(#birthdate-day)");
+  const field = document.querySelector<HTMLElement>(
+    ".contact-form__field:has(#birthdate-day)",
+  );
   if (!errorEl || !field) return;
   if (message) {
     errorEl.textContent = message;
@@ -110,12 +115,10 @@ function renderSubmissions(): void {
       <button type="button" class="btn btn--outline" data-remove aria-label="Remove entry for ${sanitise(submission.name)}">Remove</button>
     `;
 
-    entry
-      .querySelector("[data-remove]")
-      ?.addEventListener("click", () => {
-        submissions.splice(index, 1);
-        renderSubmissions();
-      });
+    entry.querySelector("[data-remove]")?.addEventListener("click", () => {
+      submissions.splice(index, 1);
+      renderSubmissions();
+    });
 
     list.appendChild(entry);
   });
@@ -136,12 +139,14 @@ emailInput?.addEventListener("input", () => {
   error ? showError(emailInput, error) : clearError(emailInput);
 });
 
-[birthdateDayInput, birthdateMonthInput, birthdateYearInput].forEach((input) => {
-  input?.addEventListener("input", () => {
-    if (!hasSubmitted) return;
-    showDateError(validateDate(getBirthdate()));
-  });
-});
+[birthdateDayInput, birthdateMonthInput, birthdateYearInput].forEach(
+  (input) => {
+    input?.addEventListener("input", () => {
+      if (!hasSubmitted) return;
+      showDateError(validateDate(getBirthdate()));
+    });
+  },
+);
 
 phoneInput?.addEventListener("input", () => {
   if (!hasSubmitted) return;
@@ -190,4 +195,14 @@ form?.addEventListener("submit", (e: Event) => {
 
   renderSubmissions();
   form.reset();
+
+  // Scroll to submissions section after successful submission
+  const section = document.getElementById("submissions");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  section?.scrollIntoView({
+    behavior: prefersReducedMotion ? "instant" : "smooth",
+    block: "start",
+  });
 });
