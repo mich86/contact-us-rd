@@ -20,125 +20,120 @@ import "../styles/main.scss";
         </p>
       </section>
       <section class="contact-form__container">
-        <div class="container">
-          <form class="contact-form" novalidate>
-            <fieldset class="contact-form__fieldset">
-              <legend class="contact-form__legend visually-hidden"
-                >Personal information</legend
+        <form class="contact-form" novalidate>
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-form__legend visually-hidden"
+              >Personal information</legend
+            >
+            <h2 class="contact-form__h2">Contact Us</h2>
+            <p class="contact-form__helper">
+              Fields marked with an asterisk (*) are required.
+            </p>
+            <!-- name -->
+            <div class="contact-form__field">
+              <label for="name" class="contact-form__label">Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-describedby="name-error"
+                class="contact-form__input"
+              />
+              <span id="name-error" hidden class="contact-form__error"
+                >Please enter a valid name.</span
               >
-              <h2 class="contact-form__h2">Contact Us</h2>
-              <p class="contact-form__helper">
-                Fields marked with an asterisk (*) are required.
-              </p>
-              <!-- name -->
-              <div class="contact-form__field">
-                <label for="name" class="contact-form__label">Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  aria-describedby="name-error"
-                  class="contact-form__input"
-                />
-                <span id="name-error" hidden class="contact-form__error"
-                  >Please enter a valid name.</span
+            </div>
+            <!-- email -->
+            <div class="contact-form__field">
+              <label for="email" class="contact-form__label">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-describedby="email-error"
+                class="contact-form__input"
+              />
+              <span id="email-error" hidden class="contact-form__error"
+                >Please enter a valid email address.</span
+              >
+            </div>
+            <!-- date of birth -->
+            <div class="contact-form__field">
+              <fieldset class="contact-form__date-fieldset">
+                <legend class="contact-form__label">Date of birth</legend>
+                <div
+                  class="contact-form__date-group"
+                  aria-describedby="birthdate-error"
                 >
-              </div>
-              <!-- email -->
-              <div class="contact-form__field">
-                <label for="email" class="contact-form__label">Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  aria-describedby="email-error"
-                  class="contact-form__input"
-                />
-                <span id="email-error" hidden class="contact-form__error"
-                  >Please enter a valid email address.</span
-                >
-              </div>
-              <!-- date of birth -->
-              <div class="contact-form__field">
-                <fieldset class="contact-form__date-fieldset">
-                  <legend class="contact-form__label">Date of birth</legend>
-                  <div
-                    class="contact-form__date-group"
-                    aria-describedby="birthdate-error"
-                  >
-                    <div class="contact-form__date-field">
-                      <label
-                        for="birthdate-day"
-                        class="contact-form__date-label">Day</label
-                      >
-                      <input
-                        type="text"
-                        id="birthdate-day"
-                        name="birthdate-day"
-                        inputmode="numeric"
-                        maxlength="2"
-                        placeholder="DD"
-                        class="contact-form__input contact-form__input--date"
-                      />
-                    </div>
-                    <div class="contact-form__date-field">
-                      <label
-                        for="birthdate-month"
-                        class="contact-form__date-label">Month</label
-                      >
-                      <input
-                        type="text"
-                        id="birthdate-month"
-                        name="birthdate-month"
-                        inputmode="numeric"
-                        maxlength="2"
-                        placeholder="MM"
-                        class="contact-form__input contact-form__input--date"
-                      />
-                    </div>
-                    <div class="contact-form__date-field">
-                      <label
-                        for="birthdate-year"
-                        class="contact-form__date-label">Year</label
-                      >
-                      <input
-                        type="text"
-                        id="birthdate-year"
-                        name="birthdate-year"
-                        inputmode="numeric"
-                        maxlength="4"
-                        placeholder="YYYY"
-                        class="contact-form__input contact-form__input--date"
-                      />
-                    </div>
+                  <div class="contact-form__date-field">
+                    <label for="birthdate-day" class="contact-form__date-label"
+                      >Day</label
+                    >
+                    <input
+                      type="text"
+                      id="birthdate-day"
+                      name="birthdate-day"
+                      inputmode="numeric"
+                      maxlength="2"
+                      placeholder="DD"
+                      class="contact-form__input contact-form__input--date"
+                    />
                   </div>
-                </fieldset>
-                <span id="birthdate-error" hidden class="contact-form__error"
-                  >Please enter a valid date of birth.</span
-                >
-              </div>
-              <!-- phone -->
-              <div class="contact-form__field">
-                <label for="phone" class="contact-form__label"
-                  >Phone number</label
-                >
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  aria-describedby="phone-error"
-                  class="contact-form__input"
-                />
-                <span id="phone-error" hidden class="contact-form__error"
-                  >Please enter a valid phone number.</span
-                >
-              </div>
-            </fieldset>
-            <button type="submit" class="btn btn--primary">Submit</button>
-          </form>
-        </div>
+                  <div class="contact-form__date-field">
+                    <label
+                      for="birthdate-month"
+                      class="contact-form__date-label">Month</label
+                    >
+                    <input
+                      type="text"
+                      id="birthdate-month"
+                      name="birthdate-month"
+                      inputmode="numeric"
+                      maxlength="2"
+                      placeholder="MM"
+                      class="contact-form__input contact-form__input--date"
+                    />
+                  </div>
+                  <div class="contact-form__date-field">
+                    <label for="birthdate-year" class="contact-form__date-label"
+                      >Year</label
+                    >
+                    <input
+                      type="text"
+                      id="birthdate-year"
+                      name="birthdate-year"
+                      inputmode="numeric"
+                      maxlength="4"
+                      placeholder="YYYY"
+                      class="contact-form__input contact-form__input--date"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <span id="birthdate-error" hidden class="contact-form__error"
+                >Please enter a valid date of birth.</span
+              >
+            </div>
+            <!-- phone -->
+            <div class="contact-form__field">
+              <label for="phone" class="contact-form__label">Phone number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                aria-describedby="phone-error"
+                class="contact-form__input"
+              />
+              <span id="phone-error" hidden class="contact-form__error"
+                >Please enter a valid phone number.</span
+              >
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn--primary">Submit</button>
+        </form>
       </section>
 
       <!-- submissions -->

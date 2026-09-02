@@ -3,7 +3,7 @@
 .container {
   max-width: 90rem;
   margin: 0 auto;
-  padding: $spacing-xl;
+  padding: $spacing-md;
 
   @media (min-width: $bp-md) {
     padding: $spacing-2xl;
