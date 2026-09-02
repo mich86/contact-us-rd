@@ -101,6 +101,7 @@ In a production environment, a branching strategy would be used - feature branch
 - Lighthouse scores: Performance 100, Accessibility 100, Best Practices 100, SEO 82
 - SEO score reflects the absence of a meta description and sitemap
 - axe DevTools scan returned no accessibility violations
+- Labels used instead of placeholder text - placeholders disappear on input, often fail colour contrast requirements and are not reliably read by all screen readers
 
 ## Future Enhancements
 
